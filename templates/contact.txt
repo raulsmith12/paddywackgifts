@@ -1,0 +1,13 @@
+Hi Tiger!
+
+You have a new contact form submission from Paddy Wack Homemade Gifts!
+
+Name: {{customerName}}
+Email: {{customerEmail}}
+Phone: {{customerPhone}}
+{{customerName}} would prefer to be contacted during the {{contactTime}} via {{contactMethod}}
+They said:
+{{message}}
+
+Paddy Wack Homemade Gifts
+PaddyWackGifts.com

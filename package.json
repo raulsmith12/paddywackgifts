@@ -1,0 +1,143 @@
+{
+  "name": "paddywack",
+  "version": "1.6.2",
+  "description": "Paddy Wack Homemade Gifts website",
+  "homepage": "https://paddywackgifts.com/",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export -o public_source",
+    "watch": "concurrently --names \"webpack, stylus\" --prefix name \"npm run start\" \"npm run styles:watch\"",
+    "eject": "react-scripts eject",
+    "styles": "stylus -u autoprefixer-stylus ./src/css/style.styl -o ./src/css/style.css",
+    "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
+    "apollo-boost": "^0.1.28",
+    "apollo-client": "^2.6.8",
+    "apollo-server": "^2.17.0",
+    "apollo-utilities": "^1.3.3",
+    "aws-sdk": "^2.747.0",
+    "axios": "^0.21.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-styled-components": "^1.7.1",
+    "cors": "^2.8.5",
+    "date-fns": "^2.0.0-alpha.7",
+    "downshift": "^2.2.3",
+    "emailjs": "^2.2.0",
+    "emailjs-com": "^2.6.4",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "express": "^4.17.1",
+    "graphql": "^14.7.0",
+    "graphql-tag": "^2.10.1",
+    "graphql-to-json": "^1.1.2",
+    "graphql-upload": "^11.0.0",
+    "lodash.debounce": "^4.0.8",
+    "next": "^10.0.3",
+    "next-express": "^1.0.1",
+    "next-page-transitions": "^1.0.0-alpha.4",
+    "next-routes": "^1.4.2",
+    "next-with-apollo": "^3.3.2",
+    "nodemailer": "^6.4.17",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.12.0",
+    "react-adopt": "^0.6.0",
+    "react-apollo": "^2.5.8",
+    "react-bootstrap": "^1.3.0",
+    "react-dom": "^16.12.0",
+    "react-ga": "^3.1.2",
+    "react-grid-gallery": "^0.5.5",
+    "react-markdown": "^4.1.0",
+    "react-redux": "^7.2.2",
+    "react-storage-hooks": "^4.0.0",
+    "react-stripe-checkout": "^2.6.3",
+    "react-transition-group": "^2.5.0",
+    "reactstrap": "^7.0.2",
+    "redux": "^4.0.5",
+    "sendemail": "^4.0.1",
+    "styled-components": "^5.2.1",
+    "sweetalert": "^2.1.2",
+    "waait": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.1.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "casual": "^1.5.19",
+    "enzyme-to-json": "^3.3.4",
+    "graphql-tools": "^4.0.0",
+    "jest": "^26.6.3",
+    "jest-transform-graphql": "^2.1.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "transform": {
+      "\\.(gql|graphql)$": "jest-transform-graphql",
+      ".*": "babel-jest"
+    }
+  },
+  "//": "This is our babel config, I prefer this over a .babelrc file",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
