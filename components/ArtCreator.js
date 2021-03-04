@@ -66,7 +66,7 @@ const ArtCreator = () => {
                             <Form.Control type="textarea" name="message" id="message" size="lg" style={{height: '200px'}} placeholder="Do you have specific instructions? Special message?" value={message} onChange={e => setMessage(e.target.value)} />
                         </Form.Group>
                         <Form.Group>
-                            <Label className="display-4">Attach Image</Label>
+                            <Form.Label className="display-4">Attach Image</Form.Label>
                             <Form.Control type="file" name="attachment" onChange={onFileChange} />
                         </Form.Group>
                         <Button color="primary">Submit</Button>{' '}

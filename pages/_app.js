@@ -8,7 +8,7 @@ import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
-const GRAPHCMS_API = 'https://api-uswest.graphcms.com/v1/cjrhbaq3h9orx01ggaap5tox7/master'
+const GRAPHCMS_API = 'https://api-us-west-2.graphcms.com/v2/cjrhbaq3h9orx01ggaap5tox7/master';
 
 const client = new ApolloClient({
   link: new HttpLink({ uri: GRAPHCMS_API }),
