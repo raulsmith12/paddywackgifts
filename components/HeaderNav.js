@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem } from 'reactstrap';
-import Link from 'next/link';
+import { Navbar, Nav } from 'react-bootstrap';
 
 const HeaderNav = () => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -9,36 +8,22 @@ const HeaderNav = () => {
 
 	return (
 		<div>
-			<Navbar color="primary" dark expand="md">
-				<NavbarBrand href="/">
+			<Navbar bg="primary" variant="dark" expand="md">
+				<Navbar.Brand href="/">
 					<img src="https://paddywackgifts.com/img/logo_white_transparent.png" height="54" alt="Paddy Wack Homemade Gifts" border="0" />
-				</NavbarBrand>
-				<NavbarToggler onClick={toggle} className="mr-2" />
-				<Collapse isOpen={isOpen} navbar>
-					<Nav className="ml-auto" navbar>
-						<NavItem className="px-4">
-							<Link href="/"><a className="nav-link">Home</a></Link>
-						</NavItem>
-						<NavItem className="px-4">
-							<Link href="/about/"><a className="nav-link">About</a></Link>
-						</NavItem>
-						<NavItem className="px-4">
-							<Link href="/shop/"><a className="nav-link">Shop</a></Link>
-						</NavItem>
-						<NavItem className="px-4">
-							<Link href="/gallery/"><a className="nav-link">Gallery</a></Link>
-						</NavItem>
-						<NavItem className="px-4">
-							<Link href="/contact/"><a className="nav-link">Contact</a></Link>
-						</NavItem>
-						<NavItem className="px-4">
-							<Link href="/join/"><a className="nav-link">Join</a></Link>
-						</NavItem>
-						<NavItem className="px-4">
-							<Link href="/creator/"><a className="nav-link">Creator</a></Link>
-						</NavItem>
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls="responsive-navbar" className="mr-2" />
+				<Navbar.Collapse id="responsive-navbar">
+					<Nav className="ml-auto">
+						<Nav.Link href="/" className="nav-link px-4">Home</Nav.Link>
+						<Nav.Link href="/about/" className="nav-link px-4">About</Nav.Link>
+						<Nav.Link href="/shop/" className="nav-link px-4">Shop</Nav.Link>
+						<Nav.Link href="/gallery/" className="nav-link px-4">Gallery</Nav.Link>
+						<Nav.Link href="/contact" className="nav-link px-4">Contact</Nav.Link>
+						<Nav.Link href="/join/" className="nav-link px-4">Join</Nav.Link>
+						<Nav.Link href="/creator" className="nav-link px-4">Creator</Nav.Link>
 					</Nav>
-				</Collapse>
+				</Navbar.Collapse>
 			</Navbar>
 		</div>
 	)

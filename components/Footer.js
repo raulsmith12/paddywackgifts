@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Alert } from 'reactstrap';
+import { Container, Alert } from 'react-bootstrap';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -22,14 +22,14 @@ const Footer = () => {
 					<Link href="/privacy/"><a className="text-white">Privacy Policy</a></Link>
 				</p>
 			</Container>
-			{count == 0 &&
-				<Alert isOpen={visible} toggle={onDismiss} className="fixed-bottom">
-					<h4 className="alert-heading">Our Commitment to Your Privacy</h4>
+			{count == 0 && visible ?
+				<Alert variant="success" onClose={onDismiss} className="fixed-bottom" dismissible>
+					<Alert.Heading><h4>Our Commitment to Your Privacy</h4></Alert.Heading>
 					<p>
 						Paddy Wack Homemade Gifts values the privacy of our customers above all else. We remain committed to making sure that you feel safe and secure when visiting our site. Please visit our privacy policy page to learn more about what information we collect and how we use it.
 					</p>
 				</Alert>
-			}
+			: <div>&nbsp;</div>}
 		</div>
 	)
 };
